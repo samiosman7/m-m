@@ -301,6 +301,14 @@ a {
   max-width: 12ch;
 }
 
+#services .container {
+  text-align: center;
+}
+
+#services .section-title {
+  max-width: none;
+}
+
 .service-grid,
 .gallery-grid {
   display: grid;
