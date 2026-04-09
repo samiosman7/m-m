@@ -466,6 +466,10 @@ a {
   align-items: center;
 }
 
+.story .container {
+  width: min(1280px, calc(100% - 1rem));
+}
+
 .story-media {
   display: grid;
   grid-template-columns: 1fr;
