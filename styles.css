@@ -417,8 +417,8 @@ a {
 }
 
 .story-grid {
-  grid-template-columns: 0.72fr 1.55fr 0.72fr;
-  gap: 1.4rem;
+  grid-template-columns: 0.64fr 1.78fr 0.64fr;
+  gap: 1.1rem;
   align-items: stretch;
 }
 
@@ -439,7 +439,7 @@ a {
 
 .story-photo {
   margin: 0;
-  min-height: 13rem;
+  min-height: 11rem;
   overflow: hidden;
   border-radius: 1.5rem;
   border: 1px solid var(--line);
@@ -451,7 +451,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.06);
+  transform: scale(1.14);
 }
 
 .story-photo-tall {
@@ -484,7 +484,7 @@ a {
 
 .story-copy {
   position: relative;
-  padding: 2rem 2.25rem;
+  padding: 1.8rem 2.5rem;
   border-radius: 1.8rem;
   background: rgba(15, 29, 43, 0.5);
   border: 1px solid var(--line);
