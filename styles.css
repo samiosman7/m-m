@@ -270,28 +270,29 @@ a {
 }
 
 .intro-grid {
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1.15fr 0.85fr;
   padding: 2rem;
   background: linear-gradient(135deg, rgba(22, 41, 60, 0.96), rgba(9, 17, 27, 0.96));
   border: 1px solid var(--line);
   border-radius: 1.8rem;
   box-shadow: var(--shadow);
+  align-items: center;
 }
 
 .intro-grid h2 {
   font-size: clamp(2.3rem, 5vw, 4.3rem);
-  max-width: 9ch;
+  max-width: 11ch;
 }
 
 .intro-copy {
   display: grid;
-  align-content: space-between;
-  min-height: 100%;
+  align-content: start;
+  gap: 1rem;
 }
 
 .intro-text {
   max-width: 32rem;
-  margin: 1.25rem 0 0;
+  margin: 0;
   color: var(--muted);
   line-height: 1.8;
 }
