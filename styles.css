@@ -417,15 +417,24 @@ a {
 }
 
 .story-grid {
-  grid-template-columns: 1.55fr 0.95fr;
+  grid-template-columns: 0.72fr 1.55fr 0.72fr;
   gap: 1.4rem;
+  align-items: stretch;
 }
 
 .story-media {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
   align-self: stretch;
+}
+
+.story-media-left {
+  padding-top: 1.75rem;
+}
+
+.story-media-right {
+  padding-bottom: 1.75rem;
 }
 
 .story-photo {
@@ -453,15 +462,15 @@ a {
   object-position: center top;
 }
 
-.story-photo:nth-child(2) img {
+.story-media-right .story-photo:first-child img {
   object-position: center top;
 }
 
-.story-photo:nth-child(3) img {
+.story-media-left .story-photo:nth-child(2) img {
   object-position: center 25%;
 }
 
-.story-photo:nth-child(4) img {
+.story-media-right .story-photo:nth-child(2) img {
   object-position: center top;
 }
 
@@ -471,6 +480,37 @@ a {
 
 .story-button {
   min-width: 18rem;
+}
+
+.story-copy {
+  position: relative;
+  padding: 2rem 2.25rem;
+  border-radius: 1.8rem;
+  background: rgba(15, 29, 43, 0.5);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.story-copy::before,
+.story-copy::after {
+  position: absolute;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(5rem, 9vw, 8rem);
+  line-height: 1;
+  color: rgba(216, 177, 91, 0.22);
+  pointer-events: none;
+}
+
+.story-copy::before {
+  content: "\201C";
+  top: 0.65rem;
+  left: 1rem;
+}
+
+.story-copy::after {
+  content: "\201D";
+  right: 1rem;
+  bottom: -1.25rem;
 }
 
 .contact-card dl {
@@ -514,6 +554,15 @@ a {
   .gallery-feature,
   .gallery-wide {
     grid-column: span 2;
+  }
+
+  .story-media {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .story-media-left,
+  .story-media-right {
+    padding: 0;
   }
 }
 
