@@ -494,7 +494,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.14);
+  transform: scale(1.04);
 }
 
 .story-photo-tall {
@@ -502,19 +502,19 @@ a {
 }
 
 .story-photo:first-child img {
-  object-position: center top;
+  object-position: center 18%;
 }
 
 .story-media-right .story-photo:first-child img {
-  object-position: center top;
+  object-position: center 16%;
 }
 
 .story-media-left .story-photo:nth-child(2) img {
-  object-position: center 25%;
+  object-position: center 22%;
 }
 
 .story-media-right .story-photo:nth-child(2) img {
-  object-position: center top;
+  object-position: center 10%;
 }
 
 .story-cta {
