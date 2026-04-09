@@ -473,7 +473,7 @@ a {
 }
 
 .story-media-left {
-  padding-top: 1.75rem;
+  padding-top: 1rem;
 }
 
 .story-media-right {
@@ -511,6 +511,10 @@ a {
 
 .story-media-left .story-photo:nth-child(2) img {
   object-position: center 22%;
+}
+
+.story-media-left .story-photo:nth-child(2) {
+  min-height: 15rem;
 }
 
 .story-media-right .story-photo:nth-child(2) img {
