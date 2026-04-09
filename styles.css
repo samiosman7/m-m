@@ -270,7 +270,7 @@ a {
 }
 
 .intro-grid {
-  grid-template-columns: 1.2fr 0.9fr;
+  grid-template-columns: 1.05fr 0.95fr;
   padding: 2rem;
   background: linear-gradient(135deg, rgba(22, 41, 60, 0.96), rgba(9, 17, 27, 0.96));
   border: 1px solid var(--line);
@@ -280,13 +280,27 @@ a {
 
 .intro-grid h2 {
   font-size: clamp(2.3rem, 5vw, 4.3rem);
-  max-width: 11ch;
+  max-width: 9ch;
+}
+
+.intro-copy {
+  display: grid;
+  align-content: space-between;
+  min-height: 100%;
+}
+
+.intro-text {
+  max-width: 32rem;
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+  line-height: 1.8;
 }
 
 .intro-points {
   display: grid;
   gap: 1rem;
   color: var(--muted);
+  align-content: start;
 }
 
 .intro-points p {
@@ -294,6 +308,35 @@ a {
   padding: 1rem 1.2rem;
   border-left: 3px solid var(--gold);
   background: rgba(255, 255, 255, 0.03);
+}
+
+.intro-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.intro-mini-card {
+  padding: 1rem 1.1rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+}
+
+.intro-mini-card strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.intro-mini-card span {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.intro-button {
+  justify-self: start;
+  margin-top: 0.5rem;
 }
 
 .section-title {
@@ -564,6 +607,10 @@ a {
   .story-media-right {
     padding: 0;
   }
+
+  .intro-mini-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 760px) {
@@ -608,6 +655,14 @@ a {
 
   .story-media {
     grid-template-columns: 1fr;
+  }
+
+  .intro-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-button {
+    justify-self: stretch;
   }
 
   .story-photo,
