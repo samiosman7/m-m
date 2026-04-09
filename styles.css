@@ -398,14 +398,25 @@ a {
 
 .review-stars {
   margin: 0 0 0.5rem;
-  letter-spacing: 0.18em;
   color: var(--gold-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .story-review ul {
   margin: 1rem 0 0;
   padding-left: 1.2rem;
   color: var(--muted);
+}
+
+.story-cta {
+  margin-bottom: 1.4rem;
+}
+
+.story-button {
+  width: 100%;
 }
 
 .contact-card dl {
