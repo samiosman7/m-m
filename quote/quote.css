@@ -1,0 +1,135 @@
+.quote-page {
+  min-height: 100vh;
+}
+
+.quote-hero {
+  padding-top: 6rem;
+}
+
+.quote-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.quote-title {
+  margin: 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(3.6rem, 8vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+}
+
+.quote-intro {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.quote-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.quote-side-card,
+.quote-card {
+  background: rgba(15, 29, 43, 0.74);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 1.5rem;
+}
+
+.quote-side-card {
+  padding: 1.5rem;
+}
+
+.quote-side-card h2 {
+  margin: 0 0 0.75rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+}
+
+.quote-side-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.quote-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.quote-card {
+  overflow: hidden;
+}
+
+.quote-card summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.4rem;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+}
+
+.quote-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.quote-badge {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(216, 177, 91, 0.12);
+  border: 1px solid rgba(216, 177, 91, 0.35);
+  color: var(--gold-strong);
+  white-space: nowrap;
+}
+
+.quote-card-body {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0 1.4rem 1.4rem;
+}
+
+.quote-card-body div {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.quote-card-body h3 {
+  margin: 0 0 0.45rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+}
+
+.quote-card-body p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 980px) {
+  .quote-hero-grid,
+  .quote-card-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .quote-card summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
