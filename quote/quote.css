@@ -99,6 +99,10 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
   padding: 0 1.4rem 1.4rem;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+  will-change: height;
 }
 
 .quote-card-body div {
