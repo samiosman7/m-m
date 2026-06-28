@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gift Cards | M&amp;M Car Detailing</title>
+    <meta
+      name="description"
+      content="Buy a digital M&M Car Detailing gift card. Choose an amount, add a personal message, and we'll deliver a redeemable code to the recipient."
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="gift-cards.css" />
+  </head>
+  <body class="gift-page" id="top">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="../">M&amp;M Car Detailing</a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="../#services">Services</a>
+          <a href="../#results">Results</a>
+          <a href="../#reviews">Reviews</a>
+          <a href="../#about">About</a>
+          <a href="../quote/">Quote</a>
+          <a href="./">Gift Cards</a>
+          <a href="../#contact">Contact</a>
+        </nav>
+        <a class="call-pill" href="tel:8134199026">(813) 419-9026</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section gift-hero">
+        <div class="container gift-hero-grid">
+          <div>
+            <p class="section-kicker">Gift Cards</p>
+            <h1 class="gift-title">Give the gift of a showroom shine.</h1>
+            <p class="gift-intro">
+              A M&amp;M Car Detailing gift card is the perfect present for any
+              car lover. Pick an amount, add a personal note, and we'll send a
+              redeemable code the recipient can use toward any detailing
+              service.
+            </p>
+            <ul class="gift-points">
+              <li>Redeemable on any service — interior, exterior, correction, coatings</li>
+              <li>Delivered by email with a unique code</li>
+              <li>No expiration pressure — book whenever it's convenient</li>
+            </ul>
+          </div>
+
+          <aside class="gift-preview" aria-hidden="true">
+            <div class="gift-card-art">
+              <div class="gca-chip"></div>
+              <span class="gca-brand">M&amp;M Car Detailing</span>
+              <span class="gca-label">Gift Card</span>
+              <span class="gca-amount" id="previewAmount">$100</span>
+              <span class="gca-to" id="previewTo">For someone special</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section gift-form-section">
+        <div class="container">
+          <form id="giftForm" class="gift-form" novalidate>
+            <div class="gift-grid">
+              <div class="gift-field gift-span">
+                <label>Choose an amount</label>
+                <div class="amount-options" id="amountOptions">
+                  <button type="button" class="amount-chip" data-amount="50">$50</button>
+                  <button type="button" class="amount-chip is-active" data-amount="100">$100</button>
+                  <button type="button" class="amount-chip" data-amount="150">$150</button>
+                  <button type="button" class="amount-chip" data-amount="200">$200</button>
+                  <button type="button" class="amount-chip" data-amount="300">$300</button>
+                  <div class="amount-custom">
+                    <span>$</span>
+                    <input type="number" id="customAmount" min="25" max="2000" step="5" placeholder="Custom" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="gift-field">
+                <label for="recipientName">Recipient name</label>
+                <input type="text" id="recipientName" required placeholder="e.g. Jordan Smith" />
+              </div>
+              <div class="gift-field">
+                <label for="recipientEmail">Recipient email</label>
+                <input type="email" id="recipientEmail" required placeholder="recipient@email.com" />
+              </div>
+              <div class="gift-field">
+                <label for="senderName">Your name</label>
+                <input type="text" id="senderName" required placeholder="From…" />
+              </div>
+              <div class="gift-field">
+                <label for="senderEmail">Your email</label>
+                <input type="email" id="senderEmail" required placeholder="you@email.com" />
+              </div>
+              <div class="gift-field">
+                <label for="deliveryDate">Deliver on</label>
+                <input type="date" id="deliveryDate" />
+              </div>
+              <div class="gift-field">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" min="1" max="20" value="1" />
+              </div>
+              <div class="gift-field gift-span">
+                <label for="message">Personal message (optional)</label>
+                <textarea id="message" rows="3" maxlength="300" placeholder="Add a note for the recipient…"></textarea>
+              </div>
+            </div>
+
+            <div class="gift-summary">
+              <div class="gift-total">
+                <span>Total</span>
+                <strong id="totalAmount">$100.00</strong>
+              </div>
+              <button type="submit" class="button primary gift-submit">Complete Purchase</button>
+            </div>
+            <p class="gift-error" id="giftError" role="alert" hidden></p>
+          </form>
+
+          <!-- Confirmation -->
+          <div class="gift-confirm" id="giftConfirm" hidden>
+            <div class="confirm-check" aria-hidden="true">✓</div>
+            <h2>Your gift card is ready!</h2>
+            <p>
+              Here's the gift card code. To finalize payment and delivery,
+              send us the order — we'll confirm payment by phone, text, or your
+              preferred method and email the card to the recipient
+              <span id="confirmWhen"></span>.
+            </p>
+            <div class="code-box">
+              <span>Gift Card Code</span>
+              <strong id="giftCode">MM-XXXX-XXXX</strong>
+              <button type="button" class="copy-btn" id="copyCode">Copy</button>
+            </div>
+            <dl class="confirm-details" id="confirmDetails"></dl>
+            <div class="confirm-actions">
+              <a class="button primary" id="emailOrder" href="#">Send Order &amp; Pay Details</a>
+              <a class="button secondary" href="tel:8134199026">Call to Pay (813) 419-9026</a>
+              <button type="button" class="button secondary" id="anotherGift">Buy Another</button>
+            </div>
+            <p class="confirm-note">
+              Prefer to pay another way? Call or text <a href="tel:8134199026">(813) 419-9026</a>.
+              We accept cash, card, and major payment apps.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <span>&copy; <span id="year">2026</span> M&amp;M Car Detailing. All rights reserved.</span>
+        <a href="../">← Back to site</a>
+      </div>
+    </footer>
+
+    <script src="../site.js"></script>
+    <script src="gift-cards.js"></script>
+  </body>
+</html>

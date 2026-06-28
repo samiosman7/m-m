@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Owner Dashboard | M&amp;M Car Detailing</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body class="admin-body">
+    <!-- ================= LOGIN ================= -->
+    <div class="login-screen" id="loginScreen">
+      <form class="login-card" id="loginForm">
+        <a class="brand" href="../">M&amp;M Car Detailing</a>
+        <h1>Owner Dashboard</h1>
+        <p>Enter your password to manage the website.</p>
+        <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password" />
+        <button type="submit" class="button primary">Unlock Dashboard</button>
+        <p class="login-error" id="loginError" hidden>Incorrect password. Try again.</p>
+        <p class="login-hint" id="loginHint" hidden></p>
+      </form>
+    </div>
+
+    <!-- ================= DASHBOARD ================= -->
+    <div class="dash" id="dashboard" hidden>
+      <aside class="dash-side">
+        <a class="brand" href="../">M&amp;M Admin</a>
+        <nav class="dash-tabs">
+          <button class="dash-tab is-active" data-tab="content">Website Text</button>
+          <button class="dash-tab" data-tab="photos">Photos</button>
+          <button class="dash-tab" data-tab="reviews">Reviews</button>
+          <button class="dash-tab" data-tab="orders">Gift Card Orders</button>
+          <button class="dash-tab" data-tab="settings">Settings</button>
+        </nav>
+        <div class="dash-side-foot">
+          <a href="../" target="_blank" rel="noopener">View live site ↗</a>
+          <button id="logoutBtn" class="link-btn">Log out</button>
+        </div>
+      </aside>
+
+      <main class="dash-main">
+        <header class="dash-bar">
+          <div class="dash-status">
+            <span id="draftStatus" class="status-pill">All changes saved</span>
+          </div>
+          <div class="dash-bar-actions">
+            <button id="undoBtn" class="button secondary sm" disabled>↶ Undo</button>
+            <button id="discardBtn" class="button secondary sm">Discard changes</button>
+            <button id="saveBtn" class="button primary sm" disabled>Save &amp; Publish</button>
+          </div>
+        </header>
+
+        <div class="dash-content">
+          <section class="editor-col">
+            <!-- Content tab -->
+            <div class="tab-panel is-active" data-panel="content">
+              <h2>Website Text</h2>
+              <p class="panel-note">Edit the wording on your homepage. Leave a field blank to keep the original text.</p>
+              <div id="contentFields"></div>
+            </div>
+
+            <!-- Photos tab -->
+            <div class="tab-panel" data-panel="photos">
+              <h2>Photos</h2>
+              <p class="panel-note">Replace any photo by uploading a new image. Large images are automatically resized.</p>
+              <div id="photoFields" class="photo-grid"></div>
+            </div>
+
+            <!-- Reviews tab -->
+            <div class="tab-panel" data-panel="reviews">
+              <h2>Customer Reviews</h2>
+              <p class="panel-note">Add, edit, or remove the testimonials shown on your homepage.</p>
+              <div id="reviewList"></div>
+              <button id="addReview" class="button secondary">+ Add Review</button>
+            </div>
+
+            <!-- Orders tab -->
+            <div class="tab-panel" data-panel="orders">
+              <h2>Gift Card Orders</h2>
+              <p class="panel-note">Orders placed through your Gift Cards page on this device.</p>
+              <div id="orderList"></div>
+            </div>
+
+            <!-- Settings tab -->
+            <div class="tab-panel" data-panel="settings">
+              <h2>Settings</h2>
+
+              <div class="setting-block">
+                <h3>Change password</h3>
+                <input type="password" id="newPassword" placeholder="New password (min 6 characters)" />
+                <button id="changePwBtn" class="button secondary">Update password</button>
+                <p class="setting-msg" id="pwMsg" hidden></p>
+              </div>
+
+              <div class="setting-block">
+                <h3>AI Chatbot (optional upgrade)</h3>
+                <p class="panel-note">
+                  Your chatbot already answers common questions for free. To power it with live AI,
+                  paste an Anthropic API key — it is stored only in this browser and used to call the
+                  assistant directly.
+                </p>
+                <input type="password" id="apiKey" placeholder="sk-ant-… (leave blank to use built-in answers)" />
+                <button id="saveKeyBtn" class="button secondary">Save key</button>
+                <button id="clearKeyBtn" class="button secondary">Remove key</button>
+                <p class="setting-msg" id="keyMsg" hidden></p>
+              </div>
+
+              <div class="setting-block danger">
+                <h3>Reset everything</h3>
+                <p class="panel-note">Remove all your edits and restore the original website.</p>
+                <button id="resetBtn" class="button secondary">Reset to defaults</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="preview-col">
+            <div class="preview-bar">
+              <strong>Live preview</strong>
+              <div class="preview-controls">
+                <button class="prev-device is-active" data-w="100%">Desktop</button>
+                <button class="prev-device" data-w="420px">Mobile</button>
+                <button id="refreshPreview" class="link-btn">Refresh ↻</button>
+              </div>
+            </div>
+            <div class="preview-frame-wrap">
+              <iframe id="previewFrame" class="preview-frame" title="Website preview" src="../index.html?preview=draft"></iframe>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" hidden></div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

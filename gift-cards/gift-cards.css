@@ -1,0 +1,386 @@
+.gift-page {
+  min-height: 100vh;
+}
+
+.gift-hero {
+  padding-top: 5rem;
+}
+
+.gift-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.gift-title {
+  margin: 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+}
+
+.gift-intro {
+  max-width: 40rem;
+  margin: 1rem 0 1.5rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.gift-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.gift-points li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.gift-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--gold-strong);
+  font-weight: 700;
+}
+
+/* Card preview */
+.gift-preview {
+  justify-self: center;
+  width: 100%;
+  max-width: 24rem;
+}
+
+.gift-card-art {
+  position: relative;
+  aspect-ratio: 1.6 / 1;
+  border-radius: 1.3rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #1c1407, #0c0c0c 60%, #1c1407);
+  border: 1px solid rgba(216, 177, 91, 0.5);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.gift-card-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 0%, rgba(242, 193, 95, 0.35), transparent 55%);
+  pointer-events: none;
+}
+
+.gca-chip {
+  width: 3rem;
+  height: 2.2rem;
+  border-radius: 0.45rem;
+  background: linear-gradient(135deg, #f0c56d, #9c7322);
+}
+.gca-brand {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0.05em;
+  color: var(--gold-strong);
+}
+.gca-label {
+  position: absolute;
+  top: 4.6rem;
+  left: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.gca-amount {
+  position: absolute;
+  bottom: 2.6rem;
+  left: 1.5rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 2.8rem;
+  color: var(--text);
+}
+.gca-to {
+  position: absolute;
+  bottom: 1.3rem;
+  left: 1.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Form */
+.gift-form-section {
+  padding-top: 0;
+}
+
+.gift-form,
+.gift-confirm {
+  background: rgba(15, 29, 43, 0.74);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 1.6rem;
+  padding: 2rem;
+}
+
+.gift-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.gift-span {
+  grid-column: 1 / -1;
+}
+
+.gift-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.gift-field label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-strong);
+}
+
+.gift-field input,
+.gift-field textarea {
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.9rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font: inherit;
+}
+
+.gift-field input:focus,
+.gift-field textarea:focus {
+  outline: none;
+  border-color: rgba(216, 177, 91, 0.6);
+}
+
+.gift-field textarea {
+  resize: vertical;
+}
+
+.amount-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.amount-chip {
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.amount-chip:hover {
+  border-color: rgba(216, 177, 91, 0.5);
+}
+
+.amount-chip.is-active {
+  background: linear-gradient(135deg, #f0c56d, #bb8b33);
+  color: #101010;
+  border-color: transparent;
+}
+
+.amount-custom {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+}
+
+.amount-custom input {
+  width: 5.5rem;
+  padding: 0.7rem 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+}
+
+.amount-custom input:focus {
+  outline: none;
+}
+
+.gift-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line);
+}
+
+.gift-total span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.gift-total strong {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 2.4rem;
+  color: var(--gold-strong);
+}
+
+.gift-submit {
+  min-width: 14rem;
+}
+
+.gift-error {
+  margin: 1rem 0 0;
+  color: #ff9b9b;
+  font-weight: 700;
+}
+
+/* Confirmation */
+.gift-confirm {
+  text-align: center;
+}
+
+.confirm-check {
+  width: 3.6rem;
+  height: 3.6rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #101010;
+  background: linear-gradient(135deg, #f0c56d, #bb8b33);
+}
+
+.gift-confirm h2 {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 2.4rem;
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+.gift-confirm > p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 38rem;
+  margin: 0 auto 1.5rem;
+}
+
+.code-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  background: rgba(216, 177, 91, 0.1);
+  border: 1px dashed rgba(216, 177, 91, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+.code-box span {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.code-box strong {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-strong);
+}
+
+.copy-btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+}
+
+.copy-btn:hover {
+  border-color: rgba(216, 177, 91, 0.5);
+}
+
+.confirm-details {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 30rem;
+  margin: 0 auto 1.6rem;
+  text-align: left;
+}
+
+.confirm-details > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.confirm-details dt {
+  color: var(--muted);
+}
+
+.confirm-details dd {
+  margin: 0;
+  text-align: right;
+  color: var(--text);
+}
+
+.confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.confirm-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.confirm-note a {
+  color: var(--gold-strong);
+}
+
+@media (max-width: 860px) {
+  .gift-hero-grid,
+  .gift-grid {
+    grid-template-columns: 1fr;
+  }
+}

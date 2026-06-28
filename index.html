@@ -6,8 +6,21 @@
     <title>M&amp;M Car Detailing | Mobile Detailing in Ruskin, FL</title>
     <meta
       name="description"
-      content="M&M Car Detailing brings premium mobile detailing, paint correction, and ceramic coatings to Ruskin, Florida and nearby areas."
+      content="M&M Car Detailing brings premium mobile detailing, paint correction, and ceramic coatings to Ruskin, Florida and nearby areas. Military-owned. Open 24 hours by appointment."
     />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="theme-color" content="#09111b" />
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="M&M Car Detailing | Mobile Detailing in Ruskin, FL" />
+    <meta
+      property="og:description"
+      content="Premium mobile detailing, paint correction, and ceramic coatings delivered to your driveway in Ruskin, FL."
+    />
+    <meta property="og:image" content="IMG_6921_Original.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,30 +28,68 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Local business structured data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoWash",
+        "name": "M&M Car Detailing",
+        "image": "IMG_6921_Original.jpg",
+        "description": "Premium mobile car detailing, paint correction, and ceramic coatings serving Ruskin, FL and nearby areas.",
+        "telephone": "+1-813-419-9026",
+        "email": "mandmcardetailing1@gmail.com",
+        "url": "",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1438 Brown Mallet Pl",
+          "addressLocality": "Ruskin",
+          "addressRegion": "FL",
+          "postalCode": "33570",
+          "addressCountry": "US"
+        },
+        "areaServed": "Ruskin, Sun City Center, Apollo Beach, Wimauma, Riverview FL",
+        "openingHours": "Mo-Su 00:00-23:59",
+        "sameAs": [
+          "https://www.instagram.com/m_mcardetailing1/",
+          "https://www.facebook.com/MandMcardetailing"
+        ]
+      }
+    </script>
   </head>
-  <body>
+  <body id="top">
+    <div class="announce">
+      <span>Mobile detailing that comes to you · Military &amp; first-responder discounts · Now offering gift cards</span>
+    </div>
+
     <header class="site-header">
       <div class="container nav-wrap">
         <a class="brand" href="#top">M&amp;M Car Detailing</a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#services">Services</a>
           <a href="#results">Results</a>
+          <a href="#reviews">Reviews</a>
           <a href="#about">About</a>
           <a href="quote/">Quote</a>
+          <a href="gift-cards/">Gift Cards</a>
           <a href="#contact">Contact</a>
         </nav>
         <a class="call-pill" href="tel:8134199026">(813) 419-9026</a>
       </div>
     </header>
 
-    <main id="top">
+    <main>
       <section class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Premium Mobile Detailing In Ruskin, Florida</p>
-            <h1>Making your car look fresh, glossy, and road-ready again.</h1>
-            <p class="hero-text">
+            <p class="eyebrow" data-edit="hero.eyebrow">Premium Mobile Detailing In Ruskin, Florida</p>
+            <h1 data-edit="hero.title">Making your car look fresh, glossy, and road-ready again.</h1>
+            <p class="hero-text" data-edit="hero.text">
               M&amp;M Car Detailing delivers professional interior detailing,
               exterior detailing, paint correction, and ceramic coatings right
               to your driveway.
@@ -51,7 +102,7 @@
             <div class="hero-meta">
               <div>
                 <strong>4.5 stars</strong>
-                <span>Based on 2 Google reviews</span>
+                <span>Based on local Google reviews</span>
               </div>
               <div>
                 <strong>Open 24 hours</strong>
@@ -64,8 +115,9 @@
             </div>
           </div>
 
-          <aside class="hero-card">
+          <aside class="hero-card reveal">
             <img
+              data-img="hero.card"
               src="54EED1E9-41CA-4A40-9B75-06FA0DCA1272.PNG"
               alt="M&M Car Detailing service flyer"
             />
@@ -74,7 +126,7 @@
       </section>
 
       <section class="intro-strip">
-        <div class="container intro-grid">
+        <div class="container intro-grid reveal">
           <div class="intro-copy">
             <p class="label">We come to you</p>
             <h2>Detailing at your home, office, or wherever your vehicle is parked.</h2>
@@ -108,28 +160,40 @@
           <p class="section-kicker">Our Services</p>
           <h2 class="section-title">Reliable mobile detailing services with a premium finish.</h2>
           <div class="service-grid">
-            <article class="service-card">
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11h1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1v1a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H8v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h1Zm2.2 0h9.6l-1-3H8.2l-1 3ZM6.5 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm11 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
+              </div>
               <h3>Full Interior Detailing</h3>
               <p>
                 Deep cleaning for seats, carpets, panels, cupholders, and
                 touchpoints to restore comfort and freshness.
               </p>
             </article>
-            <article class="service-card">
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 1.7.6 3 1.6 4.4.9 1.2 2 2.5 2.6 4.1.3.9.4 1.7.4 2.5a1 1 0 0 0 1 1h2.8a1 1 0 0 0 1-1c0-.8.1-1.6.4-2.5.6-1.6 1.7-2.9 2.6-4.1C18.4 12 19 10.7 19 9a7 7 0 0 0-7-7Zm0 4a3 3 0 0 1 3 3 1 1 0 0 1-2 0 1 1 0 0 0-1-1 1 1 0 0 1 0-2Z"/></svg>
+              </div>
               <h3>Exterior Detailing</h3>
               <p>
                 Careful washing, trim cleanup, wheel attention, and shine work
                 that brings back a clean, polished look.
               </p>
             </article>
-            <article class="service-card">
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="m13.6 2.6 7.8 7.8a2 2 0 0 1 0 2.8l-7.2 7.2a2 2 0 0 1-2.8 0l-7.8-7.8a2 2 0 0 1 0-2.8l7.2-7.2a2 2 0 0 1 2.8 0Zm-1.4 2.1L5.7 11.2l6.1 6.1 6.5-6.5-6.1-6.1ZM8 8.8 9.4 10l-1.2 1.2L6.8 9.8 8 8.8Zm3-1 1.4 1.4-1.2 1.2-1.4-1.4L11 7.8Z"/></svg>
+              </div>
               <h3>Paint Correction</h3>
               <p>
                 Refinement work that helps reduce dullness, light swirls, and
                 tired-looking paint.
               </p>
             </article>
-            <article class="service-card">
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c.4 0 .8.2 1 .6l2.2 3.8 4.3 1a1 1 0 0 1 .6 1.6l-2.9 3.3.4 4.4a1 1 0 0 1-1.4 1l-4.2-1.7-4.2 1.7a1 1 0 0 1-1.4-1l.4-4.4-2.9-3.3a1 1 0 0 1 .6-1.6l4.3-1L11 2.6c.2-.4.6-.6 1-.6Zm0 3.6-1.5 2.6a1 1 0 0 1-.6.5l-2.9.7 2 2.2c.2.2.3.5.2.8l-.2 3 2.8-1.1c.3-.1.6-.1.9 0l2.8 1.1-.2-3c0-.3 0-.6.2-.8l2-2.2-2.9-.7a1 1 0 0 1-.6-.5L12 5.6Z"/></svg>
+              </div>
               <h3>Ceramic Coatings</h3>
               <p>
                 Durable protection and gloss enhancement for drivers who want a
@@ -146,38 +210,67 @@
           <h2 class="section-title">Real vehicles. Real shine. Real local work.</h2>
           <div class="gallery-grid">
             <figure class="gallery-card gallery-feature">
-              <img src="IMG_6921_Original.jpg" alt="Freshly detailed black pickup truck" />
+              <img loading="lazy" data-img="gallery.0" src="IMG_6921_Original.jpg" alt="Freshly detailed black pickup truck" />
             </figure>
             <figure class="gallery-card gallery-tall">
-              <img src="IMG_4001.JPEG" alt="Detailed turquoise custom SUV at wash bay" />
+              <img loading="lazy" data-img="gallery.1" src="IMG_4001.JPEG" alt="Detailed turquoise custom SUV at wash bay" />
             </figure>
             <figure class="gallery-card">
-              <img src="67632541764__A2BBA710-AAB0-44A9-9C4B-81418D33C028_Original.JPEG" alt="Clean silver sedan after detailing" />
+              <img loading="lazy" data-img="gallery.2" src="67632541764__A2BBA710-AAB0-44A9-9C4B-81418D33C028_Original.JPEG" alt="Clean silver sedan after detailing" />
             </figure>
             <figure class="gallery-card">
-              <img src="67709638408__9D85301D-5FF1-44BE-8788-363325B3556C_Original.JPEG" alt="Team member wiping down a white Tesla" />
+              <img loading="lazy" data-img="gallery.3" src="67709638408__9D85301D-5FF1-44BE-8788-363325B3556C_Original.JPEG" alt="Team member wiping down a white Tesla" />
             </figure>
             <figure class="gallery-card gallery-wide">
-              <img src="IMG_7052_Original.jpg" alt="Clean luxury interior with red seats after detailing" />
+              <img loading="lazy" data-img="gallery.4" src="IMG_7052_Original.jpg" alt="Clean luxury interior with red seats after detailing" />
             </figure>
             <figure class="gallery-card">
-              <img src="IMG_4004.JPEG" alt="Mint green luxury SUV interior after detailing" />
+              <img loading="lazy" data-img="gallery.5" src="IMG_4004.JPEG" alt="Mint green luxury SUV interior after detailing" />
             </figure>
             <figure class="gallery-card">
-              <img src="IMG_0357_Original.JPEG" alt="Detailed exotic sports car seats and interior" />
+              <img loading="lazy" data-img="gallery.6" src="IMG_0357_Original.JPEG" alt="Detailed exotic sports car seats and interior" />
             </figure>
             <figure class="gallery-card gallery-wide">
-              <img src="D6B37DAC-18AE-432D-8CBC-3897DD55243E_Original.JPG" alt="Detailed Rolls-Royce dashboard and wood trim" />
+              <img loading="lazy" data-img="gallery.7" src="D6B37DAC-18AE-432D-8CBC-3897DD55243E_Original.JPG" alt="Detailed Rolls-Royce dashboard and wood trim" />
             </figure>
             <figure class="gallery-card">
-              <img src="08CF2466-BDCF-4B2A-A862-35CDCEF4646E_Original.JPG" alt="Detailed Rolls-Royce trunk interior" />
+              <img loading="lazy" data-img="gallery.8" src="08CF2466-BDCF-4B2A-A862-35CDCEF4646E_Original.JPG" alt="Detailed Rolls-Royce trunk interior" />
             </figure>
             <figure class="gallery-card">
-              <img src="IMG_7494.jpg" alt="Vehicle hood before detailing with visible residue" />
+              <img loading="lazy" data-img="gallery.9" src="IMG_7494.jpg" alt="Vehicle hood before detailing with visible residue" />
             </figure>
             <figure class="gallery-card">
-              <img src="IMG_7495.jpg" alt="Detailed vehicle exterior finish in sunlight" />
+              <img loading="lazy" data-img="gallery.10" src="IMG_7495.jpg" alt="Detailed vehicle exterior finish in sunlight" />
             </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reviews-section" id="reviews">
+        <div class="container">
+          <p class="section-kicker">What Customers Say</p>
+          <h2 class="section-title">Trusted by drivers across the Ruskin area.</h2>
+          <div class="reviews-grid" id="reviews-list"></div>
+        </div>
+      </section>
+
+      <section class="section giftcard-promo" id="gift">
+        <div class="container giftcard-grid reveal">
+          <div class="giftcard-copy">
+            <p class="section-kicker">Give the gift of clean</p>
+            <h2 class="section-title">M&amp;M Detailing Gift Cards</h2>
+            <p>
+              The perfect present for any car lover. Choose an amount, add a
+              personal message, and we'll email a redeemable code straight to
+              the recipient — ready to book their detail.
+            </p>
+            <a class="button primary" href="gift-cards/">Buy a Gift Card</a>
+          </div>
+          <div class="giftcard-visual" aria-hidden="true">
+            <div class="gift-chip"></div>
+            <span class="gift-brand">M&amp;M Car Detailing</span>
+            <span class="gift-label">Gift Card</span>
+            <span class="gift-amount">$100</span>
           </div>
         </div>
       </section>
@@ -186,13 +279,13 @@
         <div class="container story-grid">
           <div class="story-media story-media-left">
             <figure class="story-photo">
-              <img src="IMG_7748.JPEG" alt="Mark during military ceremony" />
+              <img loading="lazy" data-img="about.1" src="IMG_7748.JPEG" alt="Mark during military ceremony" />
             </figure>
           </div>
-          <div class="story-copy">
+          <div class="story-copy reveal">
             <p class="section-kicker">Owner Story</p>
             <h2 class="section-title">About Mark:</h2>
-            <p>
+            <p data-edit="about.p1">
               My name is Mark, and I&rsquo;m the owner of M&amp;M Detailing, proudly
               serving Ruskin, Florida.
             </p>
@@ -240,7 +333,7 @@
           </div>
           <div class="story-media story-media-right">
             <figure class="story-photo">
-              <img src="IMG_7751.JPEG" alt="Portrait of Mark outdoors" />
+              <img loading="lazy" data-img="about.2" src="IMG_7751.JPEG" alt="Portrait of Mark outdoors" />
             </figure>
           </div>
         </div>
@@ -266,16 +359,16 @@
             <dl>
               <div>
                 <dt>Address</dt>
-                <dd>1438 Brown Mallet Pl, Ruskin, FL 33570</dd>
+                <dd data-edit="contact.address">1438 Brown Mallet Pl, Ruskin, FL 33570</dd>
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd><a href="tel:8134199026">(813) 419-9026</a></dd>
+                <dd><a href="tel:8134199026" data-edit="contact.phone">(813) 419-9026</a></dd>
               </div>
               <div>
                 <dt>Email</dt>
                 <dd>
-                  <a href="mailto:mandmcardetailing1@gmail.com">mandmcardetailing1@gmail.com</a>
+                  <a href="mailto:mandmcardetailing1@gmail.com" data-edit="contact.email">mandmcardetailing1@gmail.com</a>
                 </dd>
               </div>
               <div>
@@ -292,12 +385,42 @@
               </div>
               <div>
                 <dt>Hours</dt>
-                <dd>Open 24 hours</dd>
+                <dd data-edit="contact.hours">Open 24 hours</dd>
               </div>
             </dl>
           </div>
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#top">M&amp;M Car Detailing</a>
+          <p>Premium mobile detailing serving Ruskin, FL and the surrounding communities.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <h4>Explore</h4>
+          <a href="#services">Services</a>
+          <a href="#results">Results</a>
+          <a href="quote/">Quote</a>
+          <a href="gift-cards/">Gift Cards</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div>
+          <h4>Get in touch</h4>
+          <a href="tel:8134199026">(813) 419-9026</a>
+          <a href="mailto:mandmcardetailing1@gmail.com">mandmcardetailing1@gmail.com</a>
+          <a href="https://www.instagram.com/m_mcardetailing1/">Instagram</a>
+          <a href="https://www.facebook.com/MandMcardetailing">Facebook</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>&copy; <span id="year">2026</span> M&amp;M Car Detailing. All rights reserved.</span>
+        <a href="admin/" class="footer-admin">Owner Login</a>
+      </div>
+    </footer>
+
+    <script src="site.js"></script>
   </body>
 </html>
