@@ -132,7 +132,7 @@
           <div class="gift-confirm" id="giftConfirm" hidden>
             <div class="confirm-check" aria-hidden="true">✓</div>
             <h2>Your gift card is ready!</h2>
-            <p>
+            <p id="confirmLead">
               Here's the gift card code. To finalize payment and delivery,
               send us the order — we'll confirm payment by phone, text, or your
               preferred method and email the card to the recipient
@@ -145,10 +145,12 @@
             </div>
             <dl class="confirm-details" id="confirmDetails"></dl>
             <div class="confirm-actions">
+              <a class="button primary" id="payNow" href="#" target="_blank" rel="noopener" hidden>Pay securely &rarr;</a>
               <a class="button primary" id="emailOrder" href="#">Send Order &amp; Pay Details</a>
               <a class="button secondary" href="tel:8134199026">Call to Pay (813) 419-9026</a>
               <button type="button" class="button secondary" id="anotherGift">Buy Another</button>
             </div>
+            <p class="confirm-note" id="payNote" hidden></p>
             <p class="confirm-note">
               Prefer to pay another way? Call or text <a href="tel:8134199026">(813) 419-9026</a>.
               We accept cash, card, and major payment apps.
