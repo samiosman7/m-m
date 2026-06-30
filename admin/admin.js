@@ -30,7 +30,7 @@
   ];
 
   const PHOTO_FIELDS = [
-    { key: "hero.card", label: "Hero flyer", def: "../54EED1E9-41CA-4A40-9B75-06FA0DCA1272.PNG" },
+    { key: "hero.bg", label: "Hero background", def: "../IMG_6921_Original.jpg" },
     { key: "about.1", label: "About photo (left)", def: "../IMG_7748.JPEG" },
     { key: "about.2", label: "About photo (right)", def: "../IMG_7751.JPEG" },
     { key: "gallery.0", label: "Gallery 1 (feature)", def: "../IMG_6921_Original.jpg" },
