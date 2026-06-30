@@ -14,6 +14,7 @@
     pwIsDefault: "mm_admin_pw_default",
     apiKey: "mm_anthropic_key",
     orders: "mm_giftcard_orders",
+    bookings: "mm_bookings",
   };
   const DEFAULT_PASSWORD = "mmdetailing2024";
 
@@ -334,6 +335,35 @@
       .join("");
   }
 
+  /* ===================== Render: Bookings ============================== */
+  function renderBookings() {
+    const wrap = $("#bookingList");
+    const bookings = read(STORE.bookings) || [];
+    if (!bookings.length) {
+      wrap.innerHTML = '<p class="panel-note">No booking requests yet.</p>';
+      return;
+    }
+    wrap.innerHTML = bookings
+      .slice()
+      .reverse()
+      .map((b) => {
+        const when = b.createdAt ? new Date(b.createdAt).toLocaleString() : "";
+        return `<div class="order-card">
+          <div class="order-top"><strong>${escapeHtml(b.ref || "")}</strong><span>${escapeHtml(b.service || "")}</span></div>
+          <div class="order-rows">
+            <span>Name: ${escapeHtml(b.name || "")}</span>
+            <span>Phone: ${escapeHtml(b.phone || "")}</span>
+            ${b.vehicle ? `<span>Vehicle: ${escapeHtml(b.vehicle)}</span>` : ""}
+            ${b.date ? `<span>Preferred date: ${escapeHtml(b.date)}</span>` : ""}
+            ${b.time ? `<span>Preferred time: ${escapeHtml(b.time)}</span>` : ""}
+            ${b.notes ? `<span>Notes: ${escapeHtml(b.notes)}</span>` : ""}
+            <span class="order-when">${when}</span>
+          </div>
+        </div>`;
+      })
+      .join("");
+  }
+
   /* ===================== Save / Undo / Discard ========================= */
   function publish() {
     try {
@@ -385,6 +415,7 @@
     renderPhotos();
     renderReviews();
     renderOrders();
+    renderBookings();
   }
 
   /* ===================== Tabs ========================================== */
@@ -396,6 +427,7 @@
         tab.classList.add("is-active");
         $(`.tab-panel[data-panel="${tab.dataset.tab}"]`).classList.add("is-active");
         if (tab.dataset.tab === "orders") renderOrders();
+        if (tab.dataset.tab === "bookings") renderBookings();
       });
     });
 

@@ -168,12 +168,60 @@
 
   /* ============================== Chatbot ================================= */
   const QUICK_REPLIES = [
+    "Book a service",
     "What services do you offer?",
     "How much for a full detail?",
     "What are your hours?",
-    "Do you come to me?",
     "Buy a gift card",
   ];
+
+  /* Services the assistant can take a booking for */
+  const BOOK_SERVICES = [
+    "Full Interior Detailing",
+    "Exterior Detailing",
+    "Full Detail (Interior + Exterior)",
+    "Paint Correction",
+    "Ceramic Coating",
+    "Not sure — recommend for me",
+  ];
+
+  function isBookingIntent(text) {
+    const s = text.toLowerCase();
+    if (/gift/.test(s)) return false; // "book a gift card" → gift flow
+    return (
+      /\b(book|booking|appointment|schedule|reserve)\b/.test(s) ||
+      /set up a time|make an appointment/.test(s)
+    );
+  }
+
+  function bookingFormHTML() {
+    const opts = BOOK_SERVICES.map(
+      (s) => '<option value="' + s + '">' + s + "</option>"
+    ).join("");
+    return (
+      '<form class="chat-booking" novalidate>' +
+      '<select name="service" aria-label="Service">' +
+      '<option value="" disabled selected>Choose a service…</option>' +
+      opts +
+      "</select>" +
+      '<input name="name" placeholder="Your name" autocomplete="name" />' +
+      '<input name="phone" type="tel" placeholder="Phone number" autocomplete="tel" />' +
+      '<input name="vehicle" placeholder="Vehicle (year / make / model)" />' +
+      '<input name="date" type="date" aria-label="Preferred date" />' +
+      '<input name="time" placeholder="Preferred time (e.g. morning)" />' +
+      '<textarea name="notes" rows="2" placeholder="Anything else? (optional)"></textarea>' +
+      '<button type="submit" class="chat-booking-go">Request booking</button>' +
+      '<p class="chat-booking-err" role="alert" hidden></p>' +
+      "</form>"
+    );
+  }
+
+  function genBookingRef() {
+    return (
+      "MM-BK-" +
+      Math.random().toString(36).slice(2, 6).toUpperCase().replace(/[01OI]/g, "X")
+    );
+  }
 
   function botReply(text) {
     const t = text.toLowerCase();
@@ -312,12 +360,98 @@
       });
     }
 
+    function startBooking() {
+      if (log.querySelector(".chat-booking")) {
+        addMsg("bot", "Your booking form is just above — fill it in and tap <strong>Request booking</strong>. 👆");
+        return;
+      }
+      addMsg("bot", "Happy to help you book! Fill this out and I'll prep it for M&amp;M:");
+      const card = document.createElement("div");
+      card.className = "chat-msg bot";
+      card.innerHTML = bookingFormHTML();
+      log.appendChild(card);
+      log.scrollTop = log.scrollHeight;
+      const form = card.querySelector(".chat-booking");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        submitBooking(form);
+      });
+    }
+
+    function submitBooking(form) {
+      const val = (n) => {
+        const el = form.querySelector('[name="' + n + '"]');
+        return el ? el.value.trim() : "";
+      };
+      const err = form.querySelector(".chat-booking-err");
+      const fail = (m) => {
+        err.textContent = m;
+        err.hidden = false;
+      };
+      const b = {
+        service: val("service"),
+        name: val("name"),
+        phone: val("phone"),
+        vehicle: val("vehicle"),
+        date: val("date"),
+        time: val("time"),
+        notes: val("notes"),
+      };
+      if (!b.name) return fail("Please add your name.");
+      if (b.phone.replace(/\D/g, "").length < 7) return fail("Please add a valid phone number.");
+      if (!b.service) return fail("Please choose a service.");
+
+      b.ref = genBookingRef();
+      b.createdAt = new Date().toISOString();
+
+      // Save locally so the owner can review bookings in the admin panel.
+      try {
+        const all = JSON.parse(localStorage.getItem("mm_bookings")) || [];
+        all.push(b);
+        localStorage.setItem("mm_bookings", JSON.stringify(all));
+      } catch (e) {}
+
+      form.querySelectorAll("input, select, textarea, button").forEach((el) => (el.disabled = true));
+
+      const subject = "Booking request " + b.ref + " — " + b.service;
+      const body =
+        "New booking request from the website chat\n\n" +
+        "Reference: " + b.ref + "\n" +
+        "Service: " + b.service + "\n" +
+        "Name: " + b.name + "\n" +
+        "Phone: " + b.phone + "\n" +
+        (b.vehicle ? "Vehicle: " + b.vehicle + "\n" : "") +
+        (b.date ? "Preferred date: " + b.date + "\n" : "") +
+        (b.time ? "Preferred time: " + b.time + "\n" : "") +
+        (b.notes ? "Notes: " + b.notes + "\n" : "") +
+        "\nPlease confirm this booking with the customer.";
+      const mailto =
+        "mailto:" + BIZ.email +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+      addMsg(
+        "bot",
+        "Thanks, " + escapeHtml(b.name) + "! Your request <strong>" + b.ref +
+          "</strong> for " + escapeHtml(b.service) + " is ready. Tap below to send it to M&amp;M — " +
+          "we'll confirm your time by phone.<br><br>" +
+          '<a class="chat-cta" href="' + mailto + '">✉ Send booking to M&amp;M</a>' +
+          '<a class="chat-cta ghost" href="tel:' + BIZ.phoneRaw + '">Call to confirm</a>'
+      );
+      history.push({ role: "assistant", content: "Booking " + b.ref + " prepared for " + b.service + "." });
+    }
+
     async function send(text) {
       const clean = text.trim();
       if (!clean) return;
       addMsg("user", escapeHtml(clean));
       history.push({ role: "user", content: clean });
       input.value = "";
+
+      if (isBookingIntent(clean)) {
+        startBooking();
+        return;
+      }
 
       const typing = addMsg("bot typing", "<span></span><span></span><span></span>");
       let reply = await liveReply(history);
