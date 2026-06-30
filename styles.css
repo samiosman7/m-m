@@ -870,6 +870,7 @@ a {
 .chat-launch:hover { transform: scale(1.06); }
 .chat-launch.hidden { display: none; }
 
+.chat-panel[hidden] { display: none; }
 .chat-panel {
   position: fixed;
   right: 1.4rem;
