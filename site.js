@@ -488,6 +488,16 @@
       e.preventDefault();
       send(input.value);
     });
+
+    // Fast ways to dismiss the chat: Escape key, or tap/click anywhere outside.
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !panel.hidden) close();
+    });
+    document.addEventListener("pointerdown", (e) => {
+      if (panel.hidden) return;
+      if (panel.contains(e.target) || launch.contains(e.target)) return;
+      close();
+    });
   }
 
   /* ============================== Boot ==================================== */

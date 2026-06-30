@@ -902,16 +902,20 @@ a {
 .chat-head strong { display: block; font-size: 1.05rem; }
 .chat-head span { font-size: 0.78rem; opacity: 0.8; }
 .chat-close {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.18);
   border: none;
   color: #04121f;
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  font-size: 1.2rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  font-size: 1.6rem;
   cursor: pointer;
   line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s;
 }
+.chat-close:hover { background: rgba(0, 0, 0, 0.32); }
 .chat-log {
   flex: 1;
   overflow-y: auto;
@@ -1409,6 +1413,17 @@ a {
   }
   .mobile-cta .button { flex: 1; min-height: 2.9rem; padding: 0.7rem; font-size: 0.92rem; }
   body { padding-bottom: 4.8rem; }
+
+  .hero-full h1 { font-size: clamp(2.4rem, 11vw, 3.6rem); }
+  .hero-text { font-size: 1rem; }
+  .hero-actions .button { flex: 1 1 auto; }
+
   .chat-launch { bottom: 5.4rem; }
-  .chat-panel { bottom: 5.4rem; height: min(560px, calc(100vh - 6.5rem)); }
+  .chat-panel {
+    left: 0.7rem;
+    right: 0.7rem;
+    bottom: 5.2rem;
+    width: auto;
+    height: min(72vh, calc(100vh - 7rem));
+  }
 }
