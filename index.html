@@ -9,7 +9,7 @@
       content="M&M Car Detailing brings premium mobile detailing, paint correction, and ceramic coatings to Ruskin, Florida and nearby areas. Military-owned. Open 24 hours by appointment."
     />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="theme-color" content="#09111b" />
+    <meta name="theme-color" content="#05070c" />
 
     <!-- Social sharing -->
     <meta property="og:type" content="website" />
@@ -71,8 +71,8 @@
         </button>
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#services">Services</a>
+          <a href="#process">Process</a>
           <a href="#results">Results</a>
-          <a href="#reviews">Reviews</a>
           <a href="#about">About</a>
           <a href="quote/">Quote</a>
           <a href="gift-cards/">Gift Cards</a>
@@ -83,6 +83,7 @@
     </header>
 
     <main>
+      <!-- ============================ HERO ============================ -->
       <section class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-grid">
@@ -97,68 +98,61 @@
             <div class="hero-actions">
               <a class="button primary" href="tel:8134199026">Call Now</a>
               <a class="button secondary" href="quote/">Find Your Quote</a>
-              <a class="button secondary" href="#contact">Book a Detail</a>
             </div>
-            <div class="hero-meta">
-              <div>
-                <strong>4.5 stars</strong>
-                <span>Based on local Google reviews</span>
-              </div>
-              <div>
-                <strong>Open 24 hours</strong>
-                <span>Mobile service by appointment</span>
-              </div>
-              <div>
-                <strong>Military-owned</strong>
-                <span>Built on discipline and precision</span>
-              </div>
-            </div>
+            <ul class="hero-trust">
+              <li><strong>4.5★</strong> Google rated</li>
+              <li><strong>Open 24h</strong> by appointment</li>
+              <li><strong>Military</strong> owned &amp; operated</li>
+              <li><strong>100%</strong> mobile service</li>
+            </ul>
           </div>
 
-          <aside class="hero-card reveal">
-            <img
-              data-img="hero.card"
-              src="54EED1E9-41CA-4A40-9B75-06FA0DCA1272.PNG"
-              alt="M&M Car Detailing service flyer"
-            />
+          <aside class="hero-visual reveal">
+            <figure class="hero-frame">
+              <img
+                data-img="hero.card"
+                src="54EED1E9-41CA-4A40-9B75-06FA0DCA1272.PNG"
+                alt="M&M Car Detailing service flyer"
+              />
+            </figure>
+            <div class="hero-badge">
+              <span class="hero-badge-stars">★★★★★</span>
+              <span>Trusted local detailer</span>
+            </div>
           </aside>
         </div>
       </section>
 
-      <section class="intro-strip">
-        <div class="container intro-grid reveal">
-          <div class="intro-copy">
-            <p class="label">We come to you</p>
-            <h2>Detailing at your home, office, or wherever your vehicle is parked.</h2>
-            <p class="intro-text">
-              Mobile service means less downtime for you and a premium detail
-              experience delivered right where it is most convenient.
-            </p>
-          </div>
-          <div class="intro-points">
-            <p>Military-owned and operated business</p>
-            <p>Serving Ruskin, FL and nearby communities</p>
-            <p>Phone, social, and local trust signals built in</p>
-            <div class="intro-mini-grid">
-              <div class="intro-mini-card">
-                <strong>Open 24 Hours</strong>
-                <span>Flexible booking by appointment</span>
-              </div>
-              <div class="intro-mini-card">
-                <strong>Full-Service Care</strong>
-                <span>Interior, exterior, correction, and coatings</span>
-              </div>
-            </div>
-            <a class="button secondary intro-button" href="#contact">Schedule Mobile Service</a>
-            <a class="button secondary intro-button" href="quote/">View Starter Pricing</a>
-          </div>
+      <!-- ========================== MARQUEE ========================== -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Interior Detailing</span><i>◆</i>
+          <span>Exterior Detailing</span><i>◆</i>
+          <span>Paint Correction</span><i>◆</i>
+          <span>Ceramic Coatings</span><i>◆</i>
+          <span>Mobile Service</span><i>◆</i>
+          <span>Military-Owned</span><i>◆</i>
+          <span>Interior Detailing</span><i>◆</i>
+          <span>Exterior Detailing</span><i>◆</i>
+          <span>Paint Correction</span><i>◆</i>
+          <span>Ceramic Coatings</span><i>◆</i>
+          <span>Mobile Service</span><i>◆</i>
+          <span>Military-Owned</span><i>◆</i>
         </div>
-      </section>
+      </div>
 
-      <section class="section" id="services">
-        <div class="container">
-          <p class="section-kicker">Our Services</p>
-          <h2 class="section-title">Reliable mobile detailing services with a premium finish.</h2>
+      <!-- ========================== SERVICES ========================= -->
+      <section class="section services-section" id="services">
+        <div class="container services-split">
+          <div class="services-head">
+            <p class="section-kicker">Our Services</p>
+            <h2 class="section-title">A premium finish, inside and out.</h2>
+            <p class="services-lead">
+              Full-service care tailored to your vehicle — from quick refreshes
+              to multi-stage correction and long-lasting protection.
+            </p>
+            <a class="button secondary" href="quote/">See Starter Pricing</a>
+          </div>
           <div class="service-grid">
             <article class="service-card reveal">
               <div class="service-icon" aria-hidden="true">
@@ -204,10 +198,48 @@
         </div>
       </section>
 
+      <!-- ========================== PROCESS ========================== -->
+      <section class="section process-section" id="process">
+        <div class="container">
+          <div class="process-head">
+            <p class="section-kicker">How It Works</p>
+            <h2 class="section-title">Four steps to a showroom finish.</h2>
+          </div>
+          <ol class="steps">
+            <li class="step reveal">
+              <span class="step-num">1</span>
+              <h3>Reach out</h3>
+              <p>Call or text and we'll lock in a time that works for you.</p>
+            </li>
+            <li class="step reveal">
+              <span class="step-num">2</span>
+              <h3>We come to you</h3>
+              <p>Home, office, or driveway — we bring the full setup to your vehicle.</p>
+            </li>
+            <li class="step reveal">
+              <span class="step-num">3</span>
+              <h3>We detail</h3>
+              <p>Interior, exterior, correction, and coatings done with precision.</p>
+            </li>
+            <li class="step reveal">
+              <span class="step-num">4</span>
+              <h3>Showroom finish</h3>
+              <p>Drive away with a vehicle that looks and feels brand new.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================== RESULTS ========================== -->
       <section class="section results" id="results">
         <div class="container">
-          <p class="section-kicker">Recent Results</p>
-          <h2 class="section-title">Real vehicles. Real shine. Real local work.</h2>
+          <div class="results-head">
+            <div>
+              <p class="section-kicker">Recent Results</p>
+              <h2 class="section-title">Real vehicles. Real shine.</h2>
+            </div>
+            <a class="button secondary" href="https://www.instagram.com/m_mcardetailing1/">See more on Instagram</a>
+          </div>
           <div class="gallery-grid">
             <figure class="gallery-card gallery-feature">
               <img loading="lazy" data-img="gallery.0" src="IMG_6921_Original.jpg" alt="Freshly detailed black pickup truck" />
@@ -246,6 +278,17 @@
         </div>
       </section>
 
+      <!-- ========================== STATS BAND ======================= -->
+      <section class="stats-band">
+        <div class="container stats-grid">
+          <div class="stat reveal"><strong>2022</strong><span>Serving Ruskin since</span></div>
+          <div class="stat reveal"><strong>4.5★</strong><span>Local Google rating</span></div>
+          <div class="stat reveal"><strong>100%</strong><span>Mobile — we come to you</span></div>
+          <div class="stat reveal"><strong>24/7</strong><span>Booking by appointment</span></div>
+        </div>
+      </section>
+
+      <!-- ========================== REVIEWS ========================== -->
       <section class="section reviews-section" id="reviews">
         <div class="container">
           <p class="section-kicker">What Customers Say</p>
@@ -254,6 +297,7 @@
         </div>
       </section>
 
+      <!-- ========================= GIFT CARDS ======================== -->
       <section class="section giftcard-promo" id="gift">
         <div class="container giftcard-grid reveal">
           <div class="giftcard-copy">
@@ -275,17 +319,21 @@
         </div>
       </section>
 
-      <section class="section story" id="about">
-        <div class="container story-grid">
-          <div class="story-media story-media-left">
-            <figure class="story-photo">
+      <!-- =========================== ABOUT =========================== -->
+      <section class="section about-section" id="about">
+        <div class="container about-grid">
+          <div class="about-media">
+            <figure class="about-photo about-photo-main">
               <img loading="lazy" data-img="about.1" src="IMG_7748.JPEG" alt="Mark during military ceremony" />
             </figure>
+            <figure class="about-photo about-photo-inset">
+              <img loading="lazy" data-img="about.2" src="IMG_7751.JPEG" alt="Portrait of Mark outdoors" />
+            </figure>
           </div>
-          <div class="story-copy reveal">
+          <div class="about-copy reveal">
             <p class="section-kicker">Owner Story</p>
-            <h2 class="section-title">About Mark:</h2>
-            <p data-edit="about.p1">
+            <h2 class="section-title">Meet Mark.</h2>
+            <p class="about-lead" data-edit="about.p1">
               My name is Mark, and I&rsquo;m the owner of M&amp;M Detailing, proudly
               serving Ruskin, Florida.
             </p>
@@ -296,52 +344,67 @@
               to life and handling the detailing after restorations were
               complete.
             </p>
-            <p>
-              Seeing those cars transformed, sometimes to even better than their
-              original condition, is what made me fall in love with this work.
-              Today, that same passion drives everything I do at M&amp;M
-              Detailing.
-            </p>
+            <blockquote class="about-quote">
+              Seeing those cars transformed — sometimes better than their
+              original condition — is what made me fall in love with this work.
+            </blockquote>
             <p>
               As someone with a military background, I&rsquo;ve built this business
               on discipline, precision, and attention to detail. I take pride
               in delivering high-end results on every vehicle I touch, whether
               it&rsquo;s a daily driver, a work truck, or a luxury or classic car.
+              I don&rsquo;t believe in cutting corners — I focus on the small
+              details that make a big difference.
             </p>
             <p>
-              At M&amp;M Detailing, I offer complete auto detailing services
-              designed to restore, protect, and enhance your vehicle inside and
-              out. I don&rsquo;t believe in cutting corners. I focus on the small
-              details that make a big difference and leave your vehicle with
-              that true showroom finish.
-            </p>
-            <p>
-              My goal is simple: deliver results that you notice immediately and
-              service you can trust every time.
-            </p>
-            <p class="story-cta">
               Because of my military background, I also have a deep respect for
               the people who serve our communities. That&rsquo;s why I proudly offer
               discounts to military members, veterans, first responders, medical
-              personnel, and educators. If you&rsquo;re in Ruskin, FL or the
-              surrounding areas and want your vehicle treated with precision,
-              care, and pride, I&rsquo;d be honored to take care of it.
+              personnel, and educators.
             </p>
-            <a class="button primary story-button" href="tel:8134199026">
-              Book Your Appointment Today
-            </a>
-          </div>
-          <div class="story-media story-media-right">
-            <figure class="story-photo">
-              <img loading="lazy" data-img="about.2" src="IMG_7751.JPEG" alt="Portrait of Mark outdoors" />
-            </figure>
+            <p class="about-sign">— Mark, Owner</p>
+            <a class="button primary" href="tel:8134199026">Book Your Appointment Today</a>
           </div>
         </div>
       </section>
 
+      <!-- ============================ FAQ ============================ -->
+      <section class="section faq-section" id="faq">
+        <div class="container faq-wrap">
+          <div class="faq-head">
+            <p class="section-kicker">Good To Know</p>
+            <h2 class="section-title">Frequently asked questions.</h2>
+            <p>Still have a question? Call or text <a href="tel:8134199026">(813) 419-9026</a> and Mark will help.</p>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary>Do you really come to me?</summary>
+              <p>Yes — we're a fully mobile service. We detail at your home, office, or wherever your vehicle is parked, throughout Ruskin, Sun City Center, Apollo Beach, Wimauma, and Riverview.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How long does a detail take?</summary>
+              <p>It depends on the service and vehicle condition. A standard interior or exterior detail is typically a couple of hours; full details and paint correction take longer. We'll give you a time estimate when you book.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How do I pay?</summary>
+              <p>We accept cash, card, and major payment apps. For gift cards, you can request one online and we'll confirm payment by phone, text, or your preferred method.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Do you offer any discounts?</summary>
+              <p>We proudly offer discounts to military members, veterans, first responders, medical personnel, and educators. Just mention it when you book.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How do I book?</summary>
+              <p>The easiest way is to call or text <a href="tel:8134199026">(813) 419-9026</a>. You can also email us or grab a gift card online any time.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== CONTACT ========================== -->
       <section class="section contact-section" id="contact">
         <div class="container contact-grid">
-          <div>
+          <div class="contact-cta">
             <p class="section-kicker">Book With Us</p>
             <h2 class="section-title">Ready to get your vehicle detailed?</h2>
             <p class="contact-copy">
@@ -402,10 +465,11 @@
         <nav aria-label="Footer navigation">
           <h4>Explore</h4>
           <a href="#services">Services</a>
+          <a href="#process">Process</a>
           <a href="#results">Results</a>
           <a href="quote/">Quote</a>
           <a href="gift-cards/">Gift Cards</a>
-          <a href="#contact">Contact</a>
+          <a href="#faq">FAQ</a>
         </nav>
         <div>
           <h4>Get in touch</h4>
@@ -420,6 +484,12 @@
         <a href="admin/" class="footer-admin">Owner Login</a>
       </div>
     </footer>
+
+    <!-- Sticky mobile call/quote bar -->
+    <div class="mobile-cta">
+      <a class="button primary" href="tel:8134199026">Call Now</a>
+      <a class="button secondary" href="quote/">Get a Quote</a>
+    </div>
 
     <script src="site.js"></script>
   </body>
